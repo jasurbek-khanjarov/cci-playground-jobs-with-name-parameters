@@ -3,9 +3,9 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: base:stable
+      - image: cimg/base:stable
     steps:
-      run: echo "Hello World"
+      - run: echo "Hello World"
     
 workflows:
   test-workflow:
