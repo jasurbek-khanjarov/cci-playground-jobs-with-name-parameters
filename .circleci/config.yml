@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: base:stable
+    steps:
+      run: echo "Hello World"
+    
+workflows:
+  test-workflow:
+    jobs:
+      - test:
+          name: "test stg"
+      - test:
+          name: "test dev"
+      - test:
+          name: "test prod"
+      
